@@ -165,6 +165,10 @@
         opacity: 0.4;
     }
 
+    input[type="checkbox"]:disabled:hover {
+        cursor: not-allowed;
+    }
+
     .continue-button {
         position: absolute;
         bottom: 20px;

@@ -10,9 +10,11 @@
 
 <div class="modal" out:fade>
     <h1 class="title">Verify Selection</h1>
-    <br />
+    {#if !adLoaded}
+        <div class="loading" />
+    {/if}
     {#if adLoaded}
-        <img src={ad} alt="Advertisement" height="250" />
+        <img src={ad} alt="Advertisement" height="300" />
     {/if}
     <button class="accept-button" on:click={() => (cookiesAccepted = true)}
         >Accept Cookies</button
@@ -22,11 +24,47 @@
         on:click={() => stage++}
         on:pointerenter={() => (adLoaded = true)}
     >
-        Decline</button
+        Verify</button
     >
 </div>
 
 <style scoped>
+    @keyframes spin {
+        0% {
+            transform: rotateY(0deg);
+        }
+        24% {
+            background-image: url("/cookie_icon.png");
+        }
+        25% {
+            transform: rotateY(90deg);
+            background-image: url("/cookie_icon_reversed.png");
+        }
+        50% {
+            transform: rotateY(180deg);
+        }
+        74% {
+            background-image: url("/cookie_icon_reversed.png");
+        }
+        75% {
+            background-image: url("/cookie_icon.png");
+            transform: rotateY(270deg);
+        }
+        100% {
+            transform: rotateY(360deg);
+        }
+    }
+    .loading {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 20px;
+        display: grid;
+        place-items: center;
+        background-image: url("/cookie_icon.png");
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        animation: spin 2s infinite linear;
+    }
     .modal {
         position: absolute;
         top: 50%;
@@ -67,6 +105,7 @@
     }
 
     .decline-button {
+        opacity: 0.3;
         border: none;
         background-color: var(--decline-color);
         color: white;
