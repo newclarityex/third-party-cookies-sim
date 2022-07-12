@@ -1,65 +1,137 @@
 <script lang="ts">
-  import logo from './assets/svelte.png'
-  import Counter from './lib/Counter.svelte'
+    import cookies from "./assets/cookies.jpg";
+    import Modal from "./lib/Modal.svelte";
 </script>
 
 <main>
-  <img src={logo} alt="Svelte Logo" />
-  <h1>Hello Typescript!</h1>
-
-  <Counter />
-
-  <p>
-    Visit <a href="https://svelte.dev">svelte.dev</a> to learn how to build Svelte
-    apps.
-  </p>
-
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme">SvelteKit</a> for
-    the officially supported framework, also powered by Vite!
-  </p>
+    <!-- <Modal /> -->
+    <header>
+        <div class="title">My amazing website</div>
+        <nav>
+            <a href=".">Home</a>
+            <a href=".">About</a>
+            <a href=".">Contact</a>
+        </nav>
+    </header>
+    <div class="article-wrapper">
+        <article>
+            <h1>Clickbait Title</h1>
+            <address>Written by Some Random Intern</address>
+            <br />
+            <div class="image-wrapper">
+                <img
+                    class="article-image"
+                    src={cookies}
+                    alt="Cookies and Milk"
+                />
+            </div>
+            <p>
+                Lorem ipsum dolor sit amet. Vel magni animi est corrupti
+                repudiandae et molestiae dolor et voluptate libero et quaerat
+                alias et sequi repellendus. Qui ipsa doloribus 33 autem neque
+                sit nemo voluptatem?
+            </p>
+            <p>
+                Est modi officiis id corporis inventore eos fugit sint ut amet
+                atque. Et veniam deleniti aut excepturi similique quo sint
+                soluta ut porro impedit qui similique quia 33 quaerat autem sed
+                rerum sunt. Est quae ullam vel amet dolore ex quasi numquam et
+                nostrum quam qui soluta laudantium internos nam repellat neque.
+                Id galisum nisi sed mollitia debitis rem dolor maiores?
+            </p>
+            <p>
+                Ut possimus debitis in deleniti optio in doloribus obcaecati aut
+                repudiandae dolorem quo modi quaerat vel quod consequatur. Quo
+                quod numquam sed autem dolorum qui deleniti voluptatem qui
+                maxime itaque sed numquam beatae eum amet illo. Aut odio
+                quisquam At blanditiis similique qui similique inventore qui
+                nobis internos? Est odio obcaecati et accusantium minus sed
+                ducimus voluptatem vel sequi accusantium.
+            </p>
+            <p>
+                Ut provident aliquid non natus omnis ex alias aliquid in harum
+                odio. Aut necessitatibus obcaecati non facere repellat ex
+                possimus labore eum asperiores porro quo dolorem aliquid sit
+                saepe necessitatibus non ipsam repellendus? Hic possimus sequi
+                eos aperiam error et veniam voluptas in quia tempora.
+            </p>
+        </article>
+    </div>
 </main>
 
 <style>
-  :root {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
+    :root {
+        --primary-color: #00bd9d;
+        --secondary-color: #5f634f;
+        --tertiary-color: #f5f5f5;
+    }
 
-  main {
-    text-align: center;
-    padding: 1em;
-    margin: 0 auto;
-  }
+    header {
+        line-height: 64px;
+        background-color: var(--primary-color);
+        color: white;
+        padding: 1rem;
+        text-align: center;
+        font-weight: 500;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-  img {
-    height: 16rem;
-    width: 16rem;
-  }
+    .article-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4rem;
-    font-weight: 100;
-    line-height: 1.1;
-    margin: 2rem auto;
-    max-width: 14rem;
-  }
+    article {
+        padding: 36px 0;
+        width: 80%;
+        max-width: 100ch;
+    }
 
-  p {
-    max-width: 14rem;
-    margin: 1rem auto;
-    line-height: 1.35;
-  }
+    .title {
+        margin: 0 36px;
+        font-size: 2.5rem;
+    }
 
-  @media (min-width: 480px) {
+    nav > a {
+        text-decoration: none;
+        color: white;
+        font-size: 2rem;
+        margin: 0 36px;
+    }
+
     h1 {
-      max-width: none;
+        font-size: 2rem;
+        color: var(--secondary-color);
+        margin: 16px 0;
+    }
+
+    address {
+        font-size: 1.2rem;
+        color: var(--secondary-color);
+        margin: 0;
+    }
+
+    .image-wrapper {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .article-image {
+        max-width: 80%;
     }
 
     p {
-      max-width: none;
+        margin: 28px 0;
+        text-indent: 64px;
+        font-size: 1.3rem;
+        line-height: 32px;
     }
-  }
 </style>
