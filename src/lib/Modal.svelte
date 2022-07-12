@@ -4,6 +4,8 @@
     import Stage0 from "./Stage0.svelte";
     import Stage1 from "./Stage1.svelte";
     import Stage2 from "./Stage2.svelte";
+    import Stage3 from "./Stage3.svelte";
+    import Stage4 from "./Stage4.svelte";
     let cookiesAccepted = false;
     let stage = 0;
 </script>
@@ -19,6 +21,12 @@
             {/if}
             {#if stage === 2}
                 <Stage2 bind:stage bind:cookiesAccepted />
+            {/if}
+            {#if stage === 3}
+                <Stage3 bind:stage bind:cookiesAccepted />
+            {/if}
+            {#if stage === 4}
+                <Stage4 bind:stage bind:cookiesAccepted />
             {/if}
         </div>
     {/if}
