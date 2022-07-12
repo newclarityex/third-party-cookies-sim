@@ -4,7 +4,7 @@
 </script>
 
 <main>
-    <!-- <Modal /> -->
+    <Modal />
     <header>
         <div class="title">My amazing website</div>
         <nav>
@@ -63,7 +63,7 @@
     :root {
         --primary-color: #00bd9d;
         --secondary-color: #5f634f;
-        --tertiary-color: #f5f5f5;
+        --tertiary-color: #2d82b7;
     }
 
     header {
