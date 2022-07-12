@@ -1,0 +1,8 @@
+{
+  "name": "third-party-cookies-sim",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/newclarityex/third-party-cookies-sim.git",
+  "author": "newclarityex <69740123+newclarityex@users.noreply.github.com>",
+  "license": "MIT"
+}
