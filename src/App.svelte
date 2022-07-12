@@ -64,6 +64,7 @@
         --primary-color: #00bd9d;
         --secondary-color: #5f634f;
         --tertiary-color: #2d82b7;
+        --decline-color: #ff5252;
     }
 
     header {
