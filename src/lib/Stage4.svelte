@@ -9,7 +9,7 @@
 
     const mazeWidth = 18;
     const mazeHeight = 9;
-    const maze = generator(mazeWidth, mazeHeight, true, Math.random());
+    const maze = generator(mazeWidth, mazeHeight, true, Math.random() * 10000);
 
     const size = 30;
 
