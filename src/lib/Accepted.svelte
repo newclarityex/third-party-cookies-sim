@@ -1,6 +1,15 @@
+<script lang="ts">
+    export let cookiesAccepted: boolean;
+</script>
+
 <div class="wrapper">
     <div class="popup">
-        Thanks for allowing third party cookies! 🎉 <div class="background" />
+        Thanks for allowing third party cookies! 🎉
+        <br />
+        <button on:click={() => (cookiesAccepted = false)}
+            >Return to Configuration</button
+        >
+        <div class="background" />
     </div>
 </div>
 
@@ -11,6 +20,7 @@
         pointer-events: none;
     }
     .popup {
+        pointer-events: auto;
         position: fixed;
         bottom: 20px;
         right: 20px;
@@ -30,5 +40,17 @@
         height: 100%;
         background-color: var(--secondary-color);
         opacity: 0.8;
+    }
+    button {
+        width: 100%;
+        font-size: 0.8em;
+        text-decoration: underline;
+        text-align: center;
+        border: none;
+        background: none;
+        color: white;
+    }
+    button:hover {
+        cursor: pointer;
     }
 </style>

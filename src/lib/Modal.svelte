@@ -8,7 +8,7 @@
     import Stage3 from "./Stage3.svelte";
     import Stage4 from "./Stage4.svelte";
     let cookiesAccepted = false;
-    let stage = 0;
+    let stage = 5;
 </script>
 
 <main>
@@ -32,10 +32,10 @@
         </div>
     {/if}
     {#if cookiesAccepted}
-        <Accepted />
+        <Accepted bind:cookiesAccepted />
     {/if}
     {#if stage === 5}
-        <Declined />
+        <Declined bind:stage />
     {/if}
 </main>
 

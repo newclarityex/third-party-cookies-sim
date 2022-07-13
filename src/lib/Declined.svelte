@@ -1,6 +1,13 @@
+<script lang="ts">
+    export let stage: number;
+</script>
+
 <div class="wrapper">
     <div class="popup">
-        You've declined our third party cookies ;( <div class="background" />
+        You've declined our third party cookies ;(
+        <br />
+        <button on:click={() => (stage = 0)}>Return to Configuration</button>
+        <div class="background" />
     </div>
 </div>
 
@@ -11,6 +18,7 @@
         pointer-events: none;
     }
     .popup {
+        pointer-events: auto;
         position: fixed;
         bottom: 20px;
         right: 20px;
@@ -30,5 +38,17 @@
         height: 100%;
         background-color: var(--decline-color);
         opacity: 0.8;
+    }
+    button {
+        width: 100%;
+        font-size: 0.8em;
+        text-decoration: underline;
+        text-align: center;
+        border: none;
+        background: none;
+        color: white;
+    }
+    button:hover {
+        cursor: pointer;
     }
 </style>
