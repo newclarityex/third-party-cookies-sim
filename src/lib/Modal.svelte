@@ -1,6 +1,7 @@
 <script lang="ts">
     import { fade } from "svelte/transition";
-    import Thanks from "./Thanks.svelte";
+    import Accepted from "./Accepted.svelte";
+    import Declined from "./Declined.svelte";
     import Stage0 from "./Stage0.svelte";
     import Stage1 from "./Stage1.svelte";
     import Stage2 from "./Stage2.svelte";
@@ -11,7 +12,7 @@
 </script>
 
 <main>
-    {#if !cookiesAccepted}
+    {#if !cookiesAccepted && stage !== 5}
         <div class="modal-wrapper" out:fade>
             {#if stage === 0}
                 <Stage0 bind:stage bind:cookiesAccepted />
@@ -31,7 +32,10 @@
         </div>
     {/if}
     {#if cookiesAccepted}
-        <Thanks />
+        <Accepted />
+    {/if}
+    {#if stage === 5}
+        <Declined />
     {/if}
 </main>
 

@@ -1,14 +1,11 @@
 <script lang="ts">
     import { fade } from "svelte/transition";
-    import ad from "../assets/ad.png";
-
-    let adLoaded = false;
 
     export let stage: number;
     export let cookiesAccepted: boolean;
 </script>
 
-<div class="modal" out:fade>
+<div class="modal" in:fade out:fade>
     <h1 class="title">Complete Cookie Configuration</h1>
 
     <div class="wrapper">

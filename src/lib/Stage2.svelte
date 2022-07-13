@@ -8,7 +8,7 @@
     export let cookiesAccepted: boolean;
 </script>
 
-<div class="modal" out:fade>
+<div class="modal" in:fade out:fade>
     <h1 class="title">Verify Selection</h1>
     {#if !adLoaded}
         <div class="loading" />
