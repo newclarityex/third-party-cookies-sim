@@ -67,7 +67,7 @@
     }
 
     const acceleration = 0.01;
-    const friction = 0.9;
+    const friction = 0.999;
     const maxVelocity = 3;
     function updateLocation() {
         if (keys.ArrowUp && velocity[1] < maxVelocity) {
